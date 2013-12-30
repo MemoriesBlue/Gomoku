@@ -1,0 +1,14 @@
+{
+	"name" : "Gomoku",
+	"main" : "index.html",
+	"window": {
+    "title": "五子棋",
+    "icon": "gomoku.png",
+    "toolbar": false,
+    "frame": true,
+    "width": 1000,
+    "height": 520,
+    "position": "center",
+    "resizable":false
+  }
+}

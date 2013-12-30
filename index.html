@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>五子棋</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			#chessboard{
+				border:0px solid #cccccc;
+				background-color: #D3AA8E;
+				float: left;
+				margin-right: 20px;
+			}
+			#tipsBoard , #consoleBoard , #gameFunction{
+				border: 3px ridge #cccccc;
+				width: 400px;
+				background-color: #EFF2F9;
+				margin-bottom: 8px;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="chessboard" width="500px" height="500px"></canvas>
+		<fieldset  id="tipsBoard">
+			<legend><strong>游戏说明</strong></legend>
+			<ol>
+				<li><span>可以在功能选项中选择双人对弈或者人机对弈两种模式</span></li>
+				<li><span>选择模式后点击“开始游戏”才能开始</span></li>
+				<li><span>本游戏默认双方都同意悔棋</span></li>
+			</ol>
+		</fieldset>
+		<fieldset  id="consoleBoard">
+			<legend><strong>游戏输出框</strong></legend>
+			<span id="tips">欢迎来玩五子棋</span>
+		</fieldset>
+		<fieldset  id="consoleBoard">
+			<legend><strong>游戏模式</strong></legend>
+			<input type="radio" name="gameMode" id="p2" value="2p" onclick="initName();" checked="checked"><label for="p2">双人对弈</label>
+			<input type="radio" name="gameMode" id="p1" value="pc" onclick="setComputerName();"><label for="p1">人机对弈</label>
+			<div><label for="black">黑方名字：</label><input type="text" name="black" id="black" value="黑棋"></div>
+			<div><label for="white">白方名字：</label><input type="text" name="white" id="white" value="白棋"></div>
+			<button onclick="beginButtonHandler();" id="beginGame">开始游戏</button>
+		</fieldset>
+		<fieldset  id="gameFunction">
+			<legend><strong>功能选项</strong></legend>
+			<button id="restart" name="restart" disabled="disabled" onclick="restart();">结束本次游戏</button>
+
+		</fieldset>
+		<script type="text/javascript" src="./js/status.js"></script>
+		<script type="text/javascript" src="./js/graphic.js"></script>
+		<script type="text/javascript" src="./js/algorithm.js"></script>
+		<script type="text/javascript" src="./js/eventHandler.js"></script>
+		<script type="text/javascript">
+			initChessBoard();	
+			var beginButton = document.getElementById("beginGame");
+    	beginButton.disabled = "";
+    	var restartButton = document.getElementById("restart");
+	    restartButton.disabled = "disabled";
+	    var reputButton = document.getElementById("reput");
+	    reputButton.disabled = "disabled";
+		</script>
+	</body>
+</html>
